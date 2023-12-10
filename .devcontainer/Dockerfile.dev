@@ -10,7 +10,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
   && apt-get install -y --no-install-recommends sudo less locales ca-certificates curl gnupg lsb-release
 RUN npm install -g zx
 
-# Install Docker
+# Docker のインストール
 RUN mkdir -p /etc/apt/keyrings && curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 RUN chmod a+r /etc/apt/keyrings/docker.gpg
 RUN echo \
@@ -62,5 +62,5 @@ RUN mkdir -p ${REMOTE_HOME}/.config \
   echo 'format = "[$symbol]($style) "'; \
   echo ''; \
   echo '[nodejs]'; \
-  echo 'format = "via [🏞️  $version](bold green) "'; \
+  echo 'format = "via [📦 $version](bold green) "'; \
   } >> ${REMOTE_HOME}/.config/starship.toml

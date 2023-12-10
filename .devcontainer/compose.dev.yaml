@@ -26,9 +26,6 @@ services:
       - type: volume
         source: app-vscode-extensions
         target: ${APP_REMOTE_HOME}/.vscode-server/extensions
-      - type: volume
-        source: app-node_modules
-        target: ${APP_REMOTE_WORKSPACES}/node_modules
     depends_on:
       - database
 
@@ -59,8 +56,6 @@ volumes:
     name: ${APP_BASH_HISTORY_VOLUME_NAME}
   app-vscode-extensions:
     name: ${APP_VSCODE_EXTENSIONS_VOLUME_NAME}
-  app-node_modules:
-    name: ${APP_NODE_MODULES_VOLUME_NAME}
 
   database-persistence:
     name: ${DATABASE_PERSISTENCE_VOLUME_NAME}
